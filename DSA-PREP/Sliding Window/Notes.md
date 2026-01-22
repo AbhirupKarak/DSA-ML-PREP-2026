@@ -1,9 +1,33 @@
-Sliding Window Technique is a method used to solve problems that involve subarray or substring or window.
-<img width="450" height="224" alt="image" src="https://github.com/user-attachments/assets/6d1caef3-0097-4418-a67f-900ec384076c" />
+# Sliding Window
 
-Instead of repeatedly iterating over the same elements, the sliding window maintains a range (or “window”) that moves step-by-step through the data, updating results incrementally.
-The main idea is to use the results of previous window to do computations for the next window.
-Commonly used for problems like finding subarrays with a specific sum, finding the longest substring with unique characters, or solving problems that require a fixed-size window to process elements efficiently.
-We compute the sum of the first k elements out of n terms using a linear loop and store the sum in variable window_sum.
-Then we will traverse linearly over the array till it reaches the end and simultaneously keep track of the maximum sum.
-To get the current sum of a block of k elements just subtract the first element from the previous block and add the last element of the current block.
+## Core Idea
+Maintain a window [left, right] and keep moving right pointer.
+Move left pointer only when condition is violated / we can shrink.
+
+## When to use
+- Given array/string + "longest / maximum / minimum subarray / substring that satisfies …"
+- "at most k …", "contains all …", "longest without repeating …"
+
+## Classic Problems
+
+1. Longest Substring Without Repeating Characters
+   Link: https://leetcode.com/problems/longest-substring-without-repeating-characters/
+   Code: https://github.com/AbhirupKarak/DSA-ML-PREP-2026/blob/main/DSA-PREP/Sliding%20Window/LongestSubstringWithoutRepeatingCharacters.cpp
+   Notes: used set + left pointer when duplicate found
+
+2. Maximum Points obtained from cards
+   Code: https://github.com/AbhirupKarak/DSA-ML-PREP-2026/blob/main/DSA-PREP/Sliding%20Window/MaximumPointsYouCanObtainFromCards.cpp
+   Key insight: (right - left + 1) - max_freq <= k
+
+3. Minimum Window Substring (hard but very important)
+   Code: https://github.com/AbhirupKarak/DSA-ML-PREP-2026/blob/main/DSA-PREP/Sliding%20Window/MinimumWindowSubstring.cpp
+
+## Template I use
+
+left = 0
+for right in range(len(arr)):
+    # add arr[right] to window
+    while window_is_invalid():
+        # remove arr[left] from window
+        left += 1
+    # update answer
