@@ -19,7 +19,7 @@ void longest_substring(string s)
             left++;
         }
 
-        if (right + left - 1 > maxlen) // Updating longest substring
+        if (right - left + 1 > maxlen) // Updating longest substring
         {
             maxlen = right - left + 1;
             start = left;
