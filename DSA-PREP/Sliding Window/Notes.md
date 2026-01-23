@@ -22,12 +22,6 @@ Move left pointer only when condition is violated / we can shrink.
 3. Minimum Window Substring (hard but very important)
    Code: https://github.com/AbhirupKarak/DSA-ML-PREP-2026/blob/main/DSA-PREP/Sliding%20Window/MinimumWindowSubstring.cpp
 
-## Template I use
+4. Maximum Consecutive 1's
+   Code: https://github.com/AbhirupKarak/DSA-ML-PREP-2026/blob/main/DSA-PREP/Sliding%20Window/MaximumConsecutive1's.cpp
 
-left = 0
-for right in range(len(arr)):
-    # add arr[right] to window
-    while window_is_invalid():
-        # remove arr[left] from window
-        left += 1
-    # update answer
